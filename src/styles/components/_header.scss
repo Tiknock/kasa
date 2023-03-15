@@ -6,10 +6,26 @@ header {
     align-items: center;
     color: $color-1;
 
+    .logo svg {
+      width: 211px;
+      height: 68px;
+      @media screen and (max-width: $small) {
+        width: 145px;
+        height: 47px;
+    }
+  }
+
     nav{
         width: 18%;
         min-width: 230px;
         font-size: 1.5rem;
+
+        @media screen and (max-width: $small) {
+        font-size: 0.75rem;
+        min-width: 0;
+        width: 40%;
+        text-transform: uppercase;
+        }
         
         ul {
             display: flex;  

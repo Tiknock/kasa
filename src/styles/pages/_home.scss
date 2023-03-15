@@ -3,12 +3,27 @@
     background: url(../../assets/img/Home.jpg) center/cover;
     @include verticalCenter;
     color: $color-2;
+    @media screen and (max-width: $small) {
+        width: 335px;
+        height: 111px;
+    }
+    
+    h1 {
+        @media screen and (max-width: $small) {
+            font-size: 24px;
+            width: 60%;
+        }
+    }
 }
 .cards-container {
-        @include verticalCenter;
-        @include nonante;
-        flex-wrap: wrap;
-        gap:10%;
-        margin: 20px auto 70px;
+    @include verticalCenter;
+    @include nonante;
+    flex-wrap: wrap;
+    gap:10%;
+    margin: 20px auto 70px;
+    
+    @media screen and (max-width: $small) {
+        margin: auto auto 20px;
+    }
     }
 }

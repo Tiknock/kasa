@@ -10,7 +10,10 @@
     height: 415px;
     overflow: hidden;
 
-    img {
+    @media screen and (max-width: $small) {
+        height: 255px;
+    }
+    .img-logement {
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -21,9 +24,17 @@
         transition: opacity .5s;
 
     }
+    .active {
+        opacity: 1;
+    }
 }
-.gallery img.active {
-    opacity: 1;
+
+.indexImg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    color: $color-2;
 }
 
 .next-btn, .prev-btn {
@@ -31,6 +42,13 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    width: 48px;
+    height: 80px;
+    
+    @media screen and (max-width: $small) {
+        width: 11.5px;
+        height: 20px;
+    }
 }
 
 .next-btn {

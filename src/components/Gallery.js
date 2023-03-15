@@ -1,68 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Gallery = ({ logement }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const intervalRef = useRef(null);
+  const images = logement.pictures;
+
+  function handlePrevClick() {
+    const newIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1;
+    setActiveIndex(newIndex);
+  }
+
+  function handleNextClick() {
+    const newIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(newIndex);
+  }
+
   useEffect(() => {
-    let imgLogement = document.getElementsByClassName("img-logement");
-    let photoActive = 0;
-    let nbrImg = imgLogement.length;
-    let previous = document.querySelector(".prev-btn");
-    let next = document.querySelector(".next-btn");
-
-    function RemoveActiveImages() {
-      for (let i = 0; i < nbrImg; i++) {
-        imgLogement[0].classList.add("active");
-        imgLogement[i].classList.remove("active");
-      }
-    }
-
-    next.addEventListener("click", function () {
-      console.log(photoActive, "next");
-      photoActive++;
-      if (photoActive >= nbrImg) {
-        photoActive = 0;
-      }
-      RemoveActiveImages();
-      imgLogement[photoActive].classList.add("active");
-    });
-
-    previous.addEventListener("click", function () {
-      console.log(photoActive, "prev");
-      photoActive--;
-      if (photoActive < 0) {
-        photoActive = nbrImg - 1;
-      }
-      RemoveActiveImages();
-      imgLogement[photoActive].classList.add("active");
-    });
-
-    RemoveActiveImages();
-    // Interval pour défilement de photos
-    setInterval(function () {
-      photoActive++;
-      if (photoActive >= nbrImg) {
-        photoActive = 0;
-      }
-      RemoveActiveImages();
-      imgLogement[photoActive].classList.add("active");
+    // Reset the interval when the component mounts or the active index changes
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      // Only update the active index if the user is not manually navigating
+      if (document.hidden) return;
+      const newIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
+      setActiveIndex(newIndex);
     }, 3000);
-  }, [logement]);
+
+    // Cleanup the interval when the component unmounts
+    return () => {
+      clearInterval(intervalRef.current);
+    };
+  }, [activeIndex]);
+
   return (
     <div className="gallery">
       <div className="gallery-container">
-        {logement.pictures.map((pic, index) => {
-          return (
-            <img
-              className="img-logement"
-              src={pic}
-              key={index}
-              alt={logement.title}
-            />
-          );
-        })}
-        <div className="next-btn">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            className={
+              index === activeIndex ? "img-logement active" : "img-logement"
+            }
+            src={image}
+            alt={logement.title}
+          />
+        ))}
+        <span className="indexImg">
+          {activeIndex + 1}/{images.length}
+        </span>
+        <div className="next-btn" onClick={handleNextClick}>
           <svg
-            width="48"
-            height="80"
             viewBox="0 0 48 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -73,10 +59,8 @@ const Gallery = ({ logement }) => {
             />
           </svg>
         </div>
-        <div className="prev-btn">
+        <div className="prev-btn" onClick={handlePrevClick}>
           <svg
-            width="48"
-            height="80"
             viewBox="0 0 48 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

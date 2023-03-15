@@ -4,7 +4,6 @@ const Box = ({ logement, type }) => {
   const [visible, setVisible] = useState(false);
   let title;
   let content;
-  console.log(type);
   switch (type) {
     case "description":
       title = "Description";

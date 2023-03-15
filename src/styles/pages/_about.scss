@@ -3,5 +3,13 @@
     
     .presentation-pic {
     background: url(../../assets/img/About.jpg) center/cover;
+        @media screen and (max-width: $small) {
+            height: 223px;
+            // width: 95%;
+        }
+    }
+
+    .box {
+        width: 95%;
     }
 }

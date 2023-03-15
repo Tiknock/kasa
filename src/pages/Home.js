@@ -17,11 +17,12 @@ const Home = () => {
     <div className="home">
       <Header />
       <div className="presentation-pic">
-        <h1>Chez vous partout ailleurs</h1>
+        <h1>Chez vous, partout ailleurs</h1>
       </div>
       <ul className="cards-container">
         {location.map((logement) => (
           <NavLink
+            key={logement.id}
             to={{
               pathname: `/logement`,
               search: `id=${logement.id}`,
@@ -29,7 +30,7 @@ const Home = () => {
             }}
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            <Card key={logement.id} logement={logement} />
+            <Card logement={logement} />
           </NavLink>
         ))}
       </ul>

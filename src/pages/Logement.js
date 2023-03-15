@@ -5,6 +5,7 @@ import Box from "../components/Box";
 import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
 import Header from "../components/Header";
+import NotFound from "./NotFound";
 
 const Logement = ({}) => {
   const location = useLocation();
@@ -22,7 +23,7 @@ const Logement = ({}) => {
   }, [location]);
 
   if (!logement) {
-    return <div>Chargement en cours...</div>;
+    return <NotFound />;
   }
 
   return (
@@ -49,20 +50,19 @@ const Logement = ({}) => {
                 alt={logement.host.name}
               />
             </div>
-            <span>
+            <div className="rate-host">
               {[...Array(5)].map((_, index) => (
-                <svg
-                  key={index}
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill={index < logement.rating ? "#FF6060" : "#E3E3E3"}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" />
-                </svg>
+                <span className="star" key={index}>
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill={index < logement.rating ? "#FF6060" : "#E3E3E3"}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" />
+                  </svg>
+                </span>
               ))}
-            </span>
+            </div>
           </div>
         </div>
         <div className="logement-body">

@@ -3,8 +3,19 @@
     @include nonante;
 
     .logement-header {
+        margin-top: 30px;
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: $small) {
+            flex-direction: column;
+        h1 {
+            font-size: 1.2rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+        }
 
         .tags-container {
             display: flex;
@@ -18,28 +29,63 @@
                 width: 130px;
                 height: 25px;
                 @include verticalCenter;
+
+                @media screen and (max-width: $small) {
+                    width: 25%;
+                    font-size: 0.6rem;
+                }
             }
         }
     }
     .host-container {
         @include verticalCenter;
         flex-direction: column;
+        gap: 20px;
         
         .host-infos {
             @include verticalCenter;
+            gap: 10px;
             
             .img-host {
                 height: 64px;
                 width: 64px;
                 border-radius: 50%;
+                @media screen and (max-width: $small) {
+                    width: 32px;
+                    height: 32px;
+                }
             }
             .host-name {
                 width : min-content;
+                font-size: 0.8rem;
+            }
+        }
+        @media screen and (max-width: $small) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        .rate-host {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            svg {
+                width: 30px;
+                height: 30px;
+                @media screen and (max-width: $small) {
+                width: 15px;
+                height: 15px;
+                }
             }
         }
     }
     .logement-body {
         display: flex;
-        justify-content: space-between;        
+        justify-content: space-between;  
+        
+        @media screen and (max-width: $small) {
+            flex-direction: column;
+        }
        }
 }
