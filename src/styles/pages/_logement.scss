@@ -1,0 +1,45 @@
+.logement-container {
+    color: $color-1;
+    @include nonante;
+
+    .logement-header {
+        display: flex;
+        justify-content: space-between;
+
+        .tags-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px auto;
+            
+            li {
+                background: $color-1;
+                color: $color-2;
+                border-radius: 10px;
+                width: 130px;
+                height: 25px;
+                @include verticalCenter;
+            }
+        }
+    }
+    .host-container {
+        @include verticalCenter;
+        flex-direction: column;
+        
+        .host-infos {
+            @include verticalCenter;
+            
+            .img-host {
+                height: 64px;
+                width: 64px;
+                border-radius: 50%;
+            }
+            .host-name {
+                width : min-content;
+            }
+        }
+    }
+    .logement-body {
+        display: flex;
+        justify-content: space-between;        
+       }
+}

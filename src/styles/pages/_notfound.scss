@@ -1,0 +1,23 @@
+.notfound-page {
+    color: $color-1;
+
+    .notfound-container {
+        @include verticalCenter;
+        @include nonante;
+        flex-direction: column;
+
+        .err404 {
+            font-size: 15rem;
+            margin: 0.5rem auto 1rem;
+        }
+        p {
+            font-size: 2.5rem;
+            margin: 1rem auto 3rem;
+        }
+        a {
+            font-size: 1.1rem;
+            color: $color-1;
+            text-decoration: underline;
+        }
+    }
+}

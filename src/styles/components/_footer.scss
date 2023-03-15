@@ -1,0 +1,9 @@
+footer {
+    background: black;
+    color: $color-2;
+    @include verticalCenter;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+}

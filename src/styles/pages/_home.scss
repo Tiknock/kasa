@@ -1,0 +1,14 @@
+.home {
+    .presentation-pic {
+    background: url(../../assets/img/Home.jpg) center/cover;
+    @include verticalCenter;
+    color: $color-2;
+}
+.cards-container {
+        @include verticalCenter;
+        @include nonante;
+        flex-wrap: wrap;
+        gap:10%;
+        margin: 20px auto 70px;
+    }
+}

@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "font-1";
+    src: url(../assets/fonts/Montserrat/static/Montserrat-Light.ttf);
+  }
+  
+  $font-1: "font-1", sans-serif;
+  
+  $color-1: #FF6060;
+  $color-2: #FFFFFF;  
+  $white: #E5E5E5;
+  
+  @mixin verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin nonante {
+    width: 90%;
+    margin: 0 auto;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    }
+  
+  body {
+    background: $white;
+    font-family: $font-1;
+    // @include verticalCenter;
+    min-height: 100vh;
+  }
+  li {
+    list-style-type: none;
+  }
+  .presentation-pic {
+    width: 90%;
+    height: 223px;
+    border-radius: 25px;
+    margin: 0 auto;
+  }
+  
