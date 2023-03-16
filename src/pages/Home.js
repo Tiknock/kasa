@@ -18,7 +18,7 @@ const Home = () => {
     <div className="home">
       <Header />
       <Banner content="Chez vous, partout ailleurs" />
-      <ul className="cards-container">
+      <div className="cards-container">
         {location.map((logement) => (
           <NavLink
             key={logement.id}
@@ -32,7 +32,7 @@ const Home = () => {
             <Card logement={logement} />
           </NavLink>
         ))}
-      </ul>
+      </div>
       <Footer />
     </div>
   );
