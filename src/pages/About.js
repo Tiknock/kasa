@@ -1,5 +1,5 @@
 import React from "react";
-import Box from "../components/Box";
+import Collapse from "../components/Collapse";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -9,20 +9,16 @@ const About = () => {
       <Header />
       <div className="presentation-pic"></div>
       <div className="box">
-        {/* equipement */}
-        <Box type="fiabilité" />
+        <Collapse type="fiabilité" />
       </div>
       <div className="box">
-        {/* equipement */}
-        <Box type="respect" />
+        <Collapse type="respect" />
       </div>
       <div className="box">
-        {/* equipement */}
-        <Box type="service" />
+        <Collapse type="service" />
       </div>
       <div className="box">
-        {/* equipement */}
-        <Box type="sécurité" />
+        <Collapse type="sécurité" />
       </div>
 
       <Footer />

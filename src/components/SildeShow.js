@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const Gallery = ({ logement }) => {
+const SildeShow = ({ logement }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef(null);
   const images = logement.pictures;
@@ -44,10 +44,13 @@ const Gallery = ({ logement }) => {
             alt={logement.title}
           />
         ))}
-        <span className="indexImg">
+        <span className={images.length > 1 ? "indexImg" : "onepic"}>
           {activeIndex + 1}/{images.length}
         </span>
-        <div className="next-btn" onClick={handleNextClick}>
+        <div
+          className={images.length > 1 ? "next-btn" : "onepic"}
+          onClick={handleNextClick}
+        >
           <svg
             viewBox="0 0 48 80"
             fill="none"
@@ -59,7 +62,10 @@ const Gallery = ({ logement }) => {
             />
           </svg>
         </div>
-        <div className="prev-btn" onClick={handlePrevClick}>
+        <div
+          className={images.length > 1 ? "prev-btn" : "onepic"}
+          onClick={handlePrevClick}
+        >
           <svg
             viewBox="0 0 48 80"
             fill="none"
@@ -76,4 +82,4 @@ const Gallery = ({ logement }) => {
   );
 };
 
-export default Gallery;
+export default SildeShow;

@@ -21,12 +21,35 @@
         justify-content: space-between;
         h2 {
             font-size: 1.2rem;
+            font-weight: 500;
+            @media screen and (max-width: $small) {
+                font-size: 1rem;
+            }
+        }
+        .vis-arrow {
+            width: 24px;
+            height: 15px;
+            @media screen and (max-width: $small) {
+                width: 16px;
+                height: 10px;
+            }
+        }
+
+        .nonvis-arrow {
+            width: 28px;
+            height: 17px;
+            @media screen and (max-width: $small) {
+                width: 16px;
+                height: 10px;
+            }
         }
     }
     .content-box {
             margin: 30px 20px 0;
+            font-size: 1.15rem;
             @media screen and (max-width: $small) {
                 margin: 15px 20px 0;
+                font-size: 0.8rem;
             }
     }
 }

@@ -7,6 +7,10 @@
         display: flex;
         justify-content: space-between;
 
+        h1 {
+            font-weight: 500;
+        }
+
         @media screen and (max-width: $small) {
             flex-direction: column;
         h1 {
@@ -23,10 +27,11 @@
             margin: 20px auto;
             
             li {
+                padding: 10px;
                 background: $color-1;
                 color: $color-2;
                 border-radius: 10px;
-                width: 130px;
+                min-width: 130px;
                 height: 25px;
                 @include verticalCenter;
 
@@ -57,7 +62,10 @@
             }
             .host-name {
                 width : min-content;
-                font-size: 0.8rem;
+                font-size: 1.15rem;
+                @media screen and (max-width: $small) {
+                    font-size: 0.8rem;
+                }
             }
         }
         @media screen and (max-width: $small) {

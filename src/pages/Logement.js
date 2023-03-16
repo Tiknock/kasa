@@ -1,15 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import Box from "../components/Box";
+import { useLocation, useNavigate } from "react-router-dom";
+import Collapse from "../components/Collapse";
 import Footer from "../components/Footer";
-import Gallery from "../components/Gallery";
+import SildeShow from "../components/SildeShow";
 import Header from "../components/Header";
-import NotFound from "./NotFound";
+import Tag from "../components/Tag";
 
 const Logement = ({}) => {
   const location = useLocation();
   const [logement, setLogement] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -18,26 +19,27 @@ const Logement = ({}) => {
 
     axios
       .get(`http://localhost:3002/location/${id}`)
-      .then((res) => setLogement(res.data));
+      .then((res) => setLogement(res.data))
+      .catch(() => navigate("*"));
     console.log(logement);
   }, [location]);
 
   if (!logement) {
-    return <NotFound />;
+    return null;
   }
 
   return (
     <div>
       <Header />
       <div className="logement-container">
-        <Gallery logement={logement} />
+        <SildeShow logement={logement} />
         <div className="logement-header">
           <div>
             <h1>{logement.title}</h1>
             <p>{logement.location}</p>
             <ul className="tags-container">
               {logement.tags.map((tag, index) => {
-                return <li key={index}>{tag}</li>;
+                return <Tag key={index} tag={tag} />;
               })}
             </ul>
           </div>
@@ -67,10 +69,10 @@ const Logement = ({}) => {
         </div>
         <div className="logement-body">
           <div className="box">
-            <Box logement={logement} type="description" />
+            <Collapse logement={logement} type="description" />
           </div>
           <div className="box">
-            <Box logement={logement} type="équipements" />
+            <Collapse logement={logement} type="équipements" />
           </div>
         </div>
       </div>

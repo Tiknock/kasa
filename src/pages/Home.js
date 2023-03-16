@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Banner from "../components/Banner";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -16,9 +17,7 @@ const Home = () => {
   return (
     <div className="home">
       <Header />
-      <div className="presentation-pic">
-        <h1>Chez vous, partout ailleurs</h1>
-      </div>
+      <Banner content="Chez vous, partout ailleurs" />
       <ul className="cards-container">
         {location.map((logement) => (
           <NavLink

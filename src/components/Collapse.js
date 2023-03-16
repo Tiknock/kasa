@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Box = ({ logement, type }) => {
+const Collapse = ({ logement, type }) => {
   const [visible, setVisible] = useState(false);
   let title;
   let content;
@@ -57,8 +57,7 @@ const Box = ({ logement, type }) => {
         <span>
           {visible ? (
             <svg
-              width="24"
-              height="15"
+              className="vis-arrow"
               viewBox="0 0 24 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +69,7 @@ const Box = ({ logement, type }) => {
             </svg>
           ) : (
             <svg
-              width="28"
-              height="17"
+              className="nonvis-arrow"
               viewBox="0 0 28 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -89,4 +87,4 @@ const Box = ({ logement, type }) => {
   );
 };
 
-export default Box;
+export default Collapse;
