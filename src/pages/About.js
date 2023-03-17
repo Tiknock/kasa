@@ -7,7 +7,7 @@ const About = () => {
   return (
     <Layout
       children=<div className="about">
-        <Banner />
+        <Banner content="A propos" />
         <div className="box">
           <Collapse type="fiabilité" />
         </div>

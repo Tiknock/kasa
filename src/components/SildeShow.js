@@ -16,16 +16,13 @@ const SildeShow = ({ logement }) => {
   }
 
   useEffect(() => {
-    // Reset the interval when the component mounts or the active index changes
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
-      // Only update the active index if the user is not manually navigating
       if (document.hidden) return;
       const newIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
       setActiveIndex(newIndex);
     }, 3000);
 
-    // Cleanup the interval when the component unmounts
     return () => {
       clearInterval(intervalRef.current);
     };

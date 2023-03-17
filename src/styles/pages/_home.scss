@@ -1,8 +1,6 @@
 .home {
     .presentation-pic {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/img/Home.jpg) center/cover;
-    @include verticalCenter;
-    color: $color-2;
     @media screen and (max-width: $small) {
         height: 111px;
         border-radius: 10px;

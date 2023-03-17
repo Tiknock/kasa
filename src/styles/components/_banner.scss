@@ -1,0 +1,8 @@
+.presentation-pic {
+    width: 90%;
+    height: 223px;
+    border-radius: 25px;
+    margin: 0 auto;
+    @include verticalCenter;
+    color: $color-2;
+  }

@@ -53,7 +53,6 @@ const Collapse = ({ logement, type }) => {
         }}
       >
         <h2>{title}</h2>
-        {/* A dérouler */}
         <span>
           {visible ? (
             <svg
