@@ -5,23 +5,25 @@ import Layout from "../components/Layout";
 
 const About = () => {
   return (
-    <Layout>
-      <div className="about">
-        <Banner content="A propos" />
-        <div className="box">
-          <Collapse type="fiabilité" />
+    <div className="about-page">
+      <Layout>
+        <div className="about">
+          <Banner content="A propos" />
+          <div className="box">
+            <Collapse type="fiabilité" />
+          </div>
+          <div className="box">
+            <Collapse type="respect" />
+          </div>
+          <div className="box">
+            <Collapse type="service" />
+          </div>
+          <div className="box">
+            <Collapse type="sécurité" />
+          </div>
         </div>
-        <div className="box">
-          <Collapse type="respect" />
-        </div>
-        <div className="box">
-          <Collapse type="service" />
-        </div>
-        <div className="box">
-          <Collapse type="sécurité" />
-        </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 };
 
