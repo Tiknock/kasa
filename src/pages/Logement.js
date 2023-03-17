@@ -28,8 +28,8 @@ const Logement = ({}) => {
   }
 
   return (
-    <Layout
-      children=<div className="logement-container">
+    <Layout>
+      <div className="logement-container">
         <SildeShow logement={logement} />
         <div className="logement-header">
           <div>
@@ -74,7 +74,7 @@ const Logement = ({}) => {
           </div>
         </div>
       </div>
-    />
+    </Layout>
   );
 };
 

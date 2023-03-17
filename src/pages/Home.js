@@ -13,8 +13,8 @@ const Home = () => {
       .then((res) => setLocation(res.data));
   }, []);
   return (
-    <Layout
-      children=<div className="home">
+    <Layout>
+      <div className="home">
         <Banner content="Chez vous, partout ailleurs" />
         <div className="cards-container">
           {location.map((logement) => (
@@ -32,7 +32,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-    />
+    </Layout>
   );
 };
 

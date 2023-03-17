@@ -5,8 +5,8 @@ import Layout from "../components/Layout";
 
 const About = () => {
   return (
-    <Layout
-      children=<div className="about">
+    <Layout>
+      <div className="about">
         <Banner content="A propos" />
         <div className="box">
           <Collapse type="fiabilité" />
@@ -21,7 +21,7 @@ const About = () => {
           <Collapse type="sécurité" />
         </div>
       </div>
-    />
+    </Layout>
   );
 };
 
