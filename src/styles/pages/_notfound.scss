@@ -1,5 +1,9 @@
 .notfound-page {
     color: $color-1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
 
     .notfound-container {
         @include verticalCenter;
@@ -9,6 +13,7 @@
             height: auto;
         }
         .err404 {
+            font-family: $font-2;
             font-size: 15rem;
             margin: 0.5rem auto 1rem;
             font-weight: 700;

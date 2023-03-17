@@ -1,9 +1,13 @@
 @font-face {
-    font-family: "font-1";
-    src: url(../assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
-  }
-  
+  font-family: "font-1";
+  src: url(../assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "font-2";
+  src: url(../assets/fonts/Montserrat/static/Montserrat-Bold.ttf);
+}
   $font-1: "font-1", sans-serif;
+  $font-2: "font-2", $font-1, sans-serif;
   
   $color-1: #FF6060;
   $color-2: #FFFFFF;  
@@ -31,7 +35,6 @@
   body {
     background: $white;
     font-family: $font-1;
-    // @include verticalCenter;
     min-height: 100vh;
   }
   li {

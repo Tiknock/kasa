@@ -2,10 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Collapse from "../components/Collapse";
-import Footer from "../components/Footer";
 import SildeShow from "../components/SildeShow";
-import Header from "../components/Header";
 import Tag from "../components/Tag";
+import Layout from "../components/Layout";
 
 const Logement = ({}) => {
   const location = useLocation();
@@ -29,9 +28,8 @@ const Logement = ({}) => {
   }
 
   return (
-    <div>
-      <Header />
-      <div className="logement-container">
+    <Layout
+      children=<div className="logement-container">
         <SildeShow logement={logement} />
         <div className="logement-header">
           <div>
@@ -76,8 +74,7 @@ const Logement = ({}) => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    />
   );
 };
 
